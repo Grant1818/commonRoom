@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io({ transports: ['websocket'] });
 
 const joinScreen = document.getElementById('join-screen');
 const chatScreen = document.getElementById('chat-screen');

@@ -10,7 +10,10 @@ import {
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  pingInterval: 10000,
+  pingTimeout: 5000,
+});
 
 app.use(express.static('public'));
 
