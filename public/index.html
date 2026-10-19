@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Common Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Screen 1: pick a name -->
+  <div id="join-screen">
+    <h1>Common Room</h1>
+    <form id="join-form">
+      <input id="name-input" placeholder="Choose a display name" maxlength="20" autocomplete="off" autofocus>
+      <button>Join</button>
+    </form>
+    <p id="join-error"></p>
+  </div>
+
+  <!-- Screen 2: the chat -->
+  <div id="chat-screen" hidden>
+    <aside>
+      <h2>Online (<span id="user-count">0</span>)</h2>
+      <ul id="user-list"></ul>
+    </aside>
+    <main>
+      <ul id="messages"></ul>
+      <form id="message-form">
+        <input id="message-input" placeholder="Type a message" maxlength="300" autocomplete="off">
+        <button>Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
